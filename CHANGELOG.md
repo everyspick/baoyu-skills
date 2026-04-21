@@ -3,6 +3,7 @@
 English | [中文](./CHANGELOG.zh.md)
 
 <!-- Personal fork notes: I'm primarily using baoyu-diagram and baoyu-post-to-wechat skills -->
+<!-- Personal note: baoyu-diagram SVG-to-PNG @2x conversion is super useful for Retina displays -->
 
 ## 1.108.0 - 2026-04-19
 
@@ -56,4 +57,4 @@ English | [中文](./CHANGELOG.zh.md)
 ## 1.102.0 - 2026-04-12
 
 ### Features
-- `baoyu-imagine`: add OpenAI-compatible image API dialect — new `--imageApiDialect` flag, `OPENAI_IMAGE_API_DIALECT` env var, and `default_image_api_dialect` config for gateways that expe
+- `baoyu-imagine`: add OpenAI-compatible image API dialect — new `--imageApiDialect` flag, 
