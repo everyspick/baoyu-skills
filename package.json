@@ -1,24 +1,51 @@
 {
   "name": "baoyu-skills",
+  "version": "1.0.0",
+  "description": "A collection of Claude skills for productivity and automation",
   "private": true,
-  "type": "module",
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "test": "node ./scripts/run-node-tests.mjs",
-    "test:coverage": "node ./scripts/run-node-tests.mjs --experimental-test-coverage"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json,md}\"",
+    "build": "tsc",
+    "prepare": "node -e \"try { require('fs').symlinkSync('../.githooks', '.git/hooks', 'dir') } catch(e) { if (e.code !== 'EEXIST') throw e }\""
   },
   "devDependencies": {
-    "@mozilla/readability": "^0.6.0",
-    "linkedom": "^0.18.12",
-    "turndown": "^7.2.2",
-    "turndown-plugin-gfm": "^1.0.2",
-    "tsx": "^4.20.5"
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "jest": "^29.5.0",
+    "prettier": "^3.0.0",
+    "semantic-release": "^22.0.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.0"
   },
-  "dependencies": {
-    "pdf-lib": "^1.17.1",
-    "pptxgenjs": "^4.0.1",
-    "sharp": "^0.34.5"
-  }
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.ts",
+      "**/*.test.ts",
+      "**/*.spec.ts"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/**/*.d.ts"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baoyu/baoyu-skills.git"
+  },
+  "license": "MIT"
 }
